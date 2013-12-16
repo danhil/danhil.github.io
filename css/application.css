@@ -39,7 +39,7 @@ textarea {
 }
 
 
-#sliding_about, #sliding_projects{
+#sliding_about, #sliding_projects, #sliding_contacts{
     height:auto;
     padding:20px;
     margin-top:10px;
@@ -51,6 +51,7 @@ textarea {
     min-width: 280px;
     max-width: 826px;
     margin: 0 auto;
+    display: block;
 }
 
 .site-header {

@@ -31,13 +31,6 @@ textarea {
     resize: vertical;
 }
 
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
     body {
         background-size: 50%;
@@ -64,12 +57,6 @@ textarea {
 
 .site-header, .about-me {
     width: 75%;
-}
-
-@media all and (min-width:601px) and (max-width:1020px) {
-    .site-header, .about-me {
-        width: 82%;
-    }
 }
 
 nav {
@@ -124,11 +111,11 @@ nav li:hover {
         transition: all 0.2s ease-out;
     }
 
-    .works .thumbnail, .gallery .thumbnail {
+    .nav .thumbnail, .gallery .thumbnail {
         -webkit-filter: grayscale(1) sepia(0.03);
     }
 
-    .works .thumbnail:hover , .gallery .thumbnail:hover {
+    .nav .thumbnail:hover , .gallery .thumbnail:hover {
         -webkit-filter: grayscale(0) sepia(0);
     }
 }
@@ -137,7 +124,7 @@ nav li:hover {
     width: 100%;
 }
 
-.works {
+.nav {
     text-align: center;
     overflow: hidden;
 }
@@ -149,17 +136,18 @@ nav li:hover {
 }
 
 .category:hover {
+
     border: none;
 }
 
-.works .category {
-    width: 23%;
+.nav .category {
+    width: 25%;
     min-width: 90px;
     max-width: 256px;
     margin: 0 12px;
 }
 
-.four.works .category {
+.four.nav .category {
     width: 17%;
     min-width: 72px;
     max-width: 186px;
@@ -169,12 +157,12 @@ nav li:hover {
 
 @media all and (min-width:481px) and (max-width:1020px){
 
-    .works .category {
+    .nav .category {
         margin: 0 1.5% 0;
         width: 25%;
     }
 
-    .four.works .category {
+    .four.nav .category {
         margin: 0 1.5% 0;
         width: 18%;
     }
@@ -182,18 +170,18 @@ nav li:hover {
 
 @media all and (max-width:480px) {
 
-    .works .category {
+    .nav .category {
         margin: 3% 1.5% 0;
         width: 25%;
     }
 
-    .four.works .category {
+    .four.nav .category {
         margin: 3% 0.5% 0;
         width: 21%;
     }
 }
 
-.works .thumbnail, .gallery .thumbnail {
+.nav .thumbnail, .gallery .thumbnail {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -206,9 +194,14 @@ nav li:hover {
     width: 100%;
 }
 
-.works .wrapper {
-    margin: 10% 0 17% 0;
+.nav .wrapper {
+    margin: 10% 0 10% 0;
+    font-size:10em;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
+
 
 .category-name {
     display: inline-block;
@@ -242,6 +235,24 @@ nav li:hover {
         width: 100%;
         margin: 0 0 27px 0;
     }
+    .sidebar {
+        width: 100%;
+        max-width: 800px;
+        margin: 0;
+    }
+
+    .sidebar h2 {
+        display: inline-block;
+        vertical-align: top;
+        letter-spacing: -2px;
+        margin: 10px 4% 0 0;
+
+    }
+
+    .win .sidebar h2 {
+        margin: 2px 4% 0 0;
+    }
+
 }
 
 .sidebar {
@@ -262,26 +273,6 @@ nav li:hover {
 .win .sidebar h2 {
     margin-top: -18px;
     margin-bottom: 34px;
-}
-
-@media all and (max-width:800px) {
-    .sidebar {
-        width: 100%;
-        max-width: 800px;
-        margin: 0;
-    }
-
-    .sidebar h2 {
-        display: inline-block;
-        vertical-align: top;
-        letter-spacing: -2px;
-        margin: 10px 4% 0 0;
-
-    }
-
-    .win .sidebar h2 {
-        margin: 2px 4% 0 0;
-    }
 }
 
 .gallery {
@@ -565,7 +556,7 @@ textarea {
 
 body {
     background-color: rgb(25, 25, 25);
-    background-image: url(../../../img/brillant-dark.png);
+    background-image: url(../img/brillant-dark.png);
 }
 
 .top-ribbon {
@@ -727,6 +718,11 @@ h1, h2, h3, h4, h5, h6 {
     .title-font {
         font: 100px/100px 'Sofia', Arial, sans-serif;
     }
+
+    .site-header, .about-me {
+        width: 82%;
+    }
+
 }
 
 .tagline-font {

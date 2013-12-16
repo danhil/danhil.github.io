@@ -61,7 +61,7 @@ textarea {
 }
 
 nav {
-    height: 78px;
+    display:block;
     padding-bottom: 5px;
 }
 
@@ -127,7 +127,7 @@ nav li:hover {
 
 .nav {
     text-align: center;
-    overflow: hidden;
+    display:block;
 }
 
 .category {

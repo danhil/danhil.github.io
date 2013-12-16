@@ -38,6 +38,15 @@ textarea {
     }
 }
 
+
+#sliding_about, #sliding_projects{
+    height:auto;
+    padding:20px;
+    margin-top:10px;
+    border-bottom:5px solid #000;
+    display:none;
+}
+
 .site-header {
     min-width: 280px;
     max-width: 826px;

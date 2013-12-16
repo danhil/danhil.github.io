@@ -1,70 +1,51 @@
-(function($){
-    $(document).ready(function() {
-
-        $(".tweets").liveTwitter('?????', {
-
-            mode:'search',
-            /* Valid options are 'search', 'user_timeline', 'list', 'favorites'. 'search' is the default. */
-
-            rate:900000,
-            /* Refresh rate, in milliseconds. The default is 15000. */
-
-            limit:5,
-            /* Maximum number of tweets to show at once. The default is 10. */
-
-            imageSize:0,
-            /* Dimensions of profile image. The default is 24 pixels. */
-
-            refresh:true,
-            /* Pass refresh: false to disable automatic refreshing. */
-
-            timeLinks:true,
-            /* Pass timeLinks: false to disable the timestamp on tweets. */
-
-            entities:false,
-            /* Includes entities. Disabled by default. */
-
-            service:false,
-            /* Use another service with compatible API, for example 'identi.ca' or 'youraccount.status.net'. */
-
-            /* rpp:100,
-               Results per page to request from the API. This defaults to the limit, increase it if you're filtering tweets. */
-
-            /* showAuthor: true,
-               username and profile picture. Defaults to false for user_timeline and true for all other modes. */
-
-            localization: { /* Hash for localization strings, see example. */
-                seconds:	'seconds ago',
-                minute:		'a minute ago',
-                minutes:	'minutes ago',
-                hour:		'an hour ago',
-                hours:		'hours ago',
-                day:		'a day ago',
-                days:		'days ago'
-            }
-
-            /*
-filter:Pass a function to filter tweets before displaying them.
-*/
-        });
+$(document).ready(function(){
 
 
+    $('.show_hide').showHide({
+        speed: 1000,  // speed you want the toggle to happen
+        easing: '',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
+        changeText: 1, // if you dont want the button text to change, set this to 0
+        showText: 'View',// the button text to show when a div is closed
+        hideText: 'Close' // the button text to show when a div is open
 
-            $('.js-tweet').click(function (e) {
+    });
 
-                e.preventDefault;
 
-                var twitterUrl = "http://twitter.com/home/?status=",
-                beginning = encodeURIComponent("Interesting stuff on "),
-                pageUrl = location.href,
-                pageTitle = encodeURIComponent(document.title),
-                end = encodeURIComponent(" by @user #hashtag ");
+});
 
-                url = twitterUrl + beginning + pageUrl + end;
+(function ($) {
 
-                window.open(url, '_blank');
+    $.fn.showHide = function (options) {
 
+        //default vars for the plugin
+        var defaults = {
+            speed: 1000,
+            easing: '',
+            changeText: 0,
+            showText: 'Show',
+            hideText: 'Hide'
+
+        };
+        var options = $.extend(defaults, options);
+
+        $(this).click(function () {
+
+            $('.toggleDiv').slideUp(options.speed, options.easing);
+            // this var stores which button you've clicked
+            var toggleClick = $(this);
+            // this reads the rel attribute of the button to determine which div id to toggle
+            var toggleDiv = $(this).attr('rel');
+            // here we toggle show/hide the correct div at the right speed and using which easing effect
+            $(toggleDiv).slideToggle(options.speed, options.easing, function() {
+                // this only fires once the animation is completed
+                if(options.changeText==1){
+                    $(toggleDiv).is(":visible") ? toggleClick.text(options.hideText) : toggleClick.text(options.showText);
+                }
             });
 
+            return false;
+
         });
-    })(jQuery);
+
+    };
+})(jQuery);

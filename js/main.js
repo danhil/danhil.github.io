@@ -32,7 +32,7 @@ $(document).ready(function(){
                 //$(inverted_header).slideToggle(options.speed, options.easing);
             } else {
                 //$(inverted_header).slideUp(options.speed, options.easing);
-                $(toggledDiv).slideUp(options.speed, 'swing');
+                $(toggledDiv).slideUp(options.speed, options.easing);
                 toggledDiv = toggleDiv;
             }
             $(toggleDiv).slideToggle(options.speed, options.easing);

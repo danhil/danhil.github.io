@@ -2,11 +2,8 @@ $(document).ready(function(){
 
 
     $('.show_hide').showHide({
-        speed: 1000,  // speed you want the toggle to happen
-        easing: '',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
-        changeText: 1, // if you dont want the button text to change, set this to 0
-        showText: 'View',// the button text to show when a div is closed
-        hideText: 'Close' // the button text to show when a div is open
+        speed: 1200,  // speed you want the toggle to happen
+        easing: 'linear',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
 
     });
 
@@ -17,35 +14,28 @@ $(document).ready(function(){
 
     $.fn.showHide = function (options) {
 
-        //default vars for the plugin
         var defaults = {
-            speed: 1000,
-            easing: '',
-            changeText: 0,
-            showText: 'Show',
-            hideText: 'Hide'
-
+            speed: 1500,
+            easing: 'linear',
         };
 
         var options = $.extend(defaults, options);
         var inverted_header = $('.inverted_show_hide');
-
+        var toggledDiv = '';
         $(this).click(function () {
 
             $('.toggleDiv').slideUp(options.speed, options.easing);
-            // this var stores which button you've clicked
             var toggleClick = $(this);
-            // this reads the rel attribute of the button to determine which div id to toggle
             var toggleDiv = $(this).attr('rel');
-            // here we toggle show/hide the correct div at the right speed and using which easing effect
-            $(toggleDiv).slideToggle(options.speed, options.easing);
-            $(inverted_header).slideToggle(options.speed, options.easing);
 
-            // $(inverted_header).slideToggle(options.speed, options.easing, function() {
-            //if(options.changeText==1){
-            //$(toggleDiv).is(":visible") ? toggleClick.text(options.hideText) : toggleClick.text(options.showText);
-            //   }
-            //});
+            if(String(toggleDiv) === String(toggledDiv)){
+                //$(inverted_header).slideToggle(options.speed, options.easing);
+            } else {
+                //$(inverted_header).slideUp(options.speed, options.easing);
+                $(toggledDiv).slideUp(options.speed, 'swing');
+                toggledDiv = toggleDiv;
+            }
+            $(toggleDiv).slideToggle(options.speed, options.easing);
 
             return false;
 

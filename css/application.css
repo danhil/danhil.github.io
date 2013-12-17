@@ -40,18 +40,27 @@ textarea {
 
 
 #sliding_about, #sliding_projects, #sliding_contacts{
-    height:auto;
-    padding:20px;
-    margin-top:10px;
-    border-bottom:5px solid #000;
-    display:none;
+    position:absolute;
+    z-index:10;
+    width:75%;
+    height: 20%;
+    left: 50%;
+    margin-left: -32%;
+    min-width: 280px;
+    max-width: 826px;
+    padding:42px;
+    border-bottom:5px groove rgb(25, 25, 25);
+    display: none;
+    background-color: #0C0C0C;
 }
 
 .site-header {
+    position:relative;
     min-width: 280px;
     max-width: 826px;
     margin: 0 auto;
     display: block;
+    z-index: -1;
 }
 
 .site-header {
@@ -68,6 +77,7 @@ textarea {
 
 .site-header, .about-me {
     width: 75%;
+    height:50%;
 }
 
 nav {
@@ -650,6 +660,14 @@ h1, h2, h3, h4, h5, h6 {
     font: 90px/90px 'Sofia', Arial, sans-serif;
     margin: 0.5em 0;
     word-spacing: -14px;
+}
+
+.content-font {
+    font: 18px/18px 'OpenSansRegular', Arial, sans-serif;
+    margin: 0.5em 0;
+    word-spacing: -1.4px;
+    color: #A5A5A5;
+
 }
 
 .rotated {

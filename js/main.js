@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('.show_hide').showHide({
         speed: 1200,  // speed you want the toggle to happen
         easing: 'linear',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
+        speedUp: 2000,
 
     });
 
@@ -17,6 +18,7 @@ $(document).ready(function(){
         var defaults = {
             speed: 1500,
             easing: 'linear',
+            speedUp: 2000,
         };
 
         var options = $.extend(defaults, options);
@@ -32,7 +34,7 @@ $(document).ready(function(){
                 //$(inverted_header).slideToggle(options.speed, options.easing);
             } else {
                 //$(inverted_header).slideUp(options.speed, options.easing);
-                $(toggledDiv).slideUp(options.speed, options.easing);
+                $(toggledDiv).slideUp(options.speedUp, options.easing);
                 toggledDiv = toggleDiv;
             }
             $(toggleDiv).slideToggle(options.speed, options.easing);

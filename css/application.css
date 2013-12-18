@@ -39,16 +39,14 @@ textarea {
 }
 
 
-#sliding_about, #sliding_projects, #sliding_contacts{
+#fading_about, #fading_projects, #fading_contacts{
     position:absolute;
     z-index:10;
-    width:75%;
-    height: 20%;
+    width:80%;
+    height: 25%;
     left: 50%;
-    margin-left: -32%;
-    min-width: 280px;
-    max-width: 826px;
-    padding:42px;
+    margin-left: -42%;
+    padding:3%;
     border-bottom:5px groove rgb(25, 25, 25);
     display: none;
     background-color: #0C0C0C;
@@ -130,33 +128,6 @@ nav li:hover {
 }
 
 
-@media all and (min-width:1031px) {
-
-    .thumbnail {
-        -webkit-transition: all 0.2s ease-out;
-        -moz-transition: all 0.2s ease-out;
-        transition: all 0.2s ease-out;
-    }
-
-    .thumbnail:hover {
-        -webkit-transition: all 0.2s ease-out;
-        -moz-transition: all 0.2s ease-out;
-        transition: all 0.2s ease-out;
-    }
-
-    .nav .thumbnail, .gallery .thumbnail {
-        -webkit-filter: grayscale(1) sepia(0.03);
-    }
-
-    .nav .thumbnail:hover , .gallery .thumbnail:hover {
-        -webkit-filter: grayscale(0) sepia(0);
-    }
-}
-
-.thumbnail {
-    width: 100%;
-}
-
 .nav {
     text-align: center;
     display:block;
@@ -180,24 +151,12 @@ nav li:hover {
     margin: 0 12px;
 }
 
-.four.nav .category {
-    width: 17%;
-    min-width: 72px;
-    max-width: 186px;
-    margin: 0 11px;
-}
-
 
 @media all and (min-width:481px) and (max-width:1020px){
 
     .nav .category {
         margin: 0 1.5% 0;
         width: 25%;
-    }
-
-    .four.nav .category {
-        margin: 0 1.5% 0;
-        width: 18%;
     }
 }
 
@@ -208,16 +167,6 @@ nav li:hover {
         width: 25%;
     }
 
-    .four.nav .category {
-        margin: 3% 0.5% 0;
-        width: 21%;
-    }
-}
-
-.nav .thumbnail, .gallery .thumbnail {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
 }
 
 .wrapper {
@@ -268,24 +217,6 @@ nav li:hover {
         width: 100%;
         margin: 0 0 27px 0;
     }
-    .sidebar {
-        width: 100%;
-        max-width: 800px;
-        margin: 0;
-    }
-
-    .sidebar h2 {
-        display: inline-block;
-        vertical-align: top;
-        letter-spacing: -2px;
-        margin: 10px 4% 0 0;
-
-    }
-
-    .win .sidebar h2 {
-        margin: 2px 4% 0 0;
-    }
-
 }
 
 .sidebar {
@@ -329,17 +260,6 @@ nav li:hover {
     min-width: 100px;
     margin: 2%  1.6%;
 }
-@media all and (max-width:320px) {
-
-    .gallery {
-        margin-left: 5px;
-    }
-
-    .gallery .wrapper {
-        margin: 0 0 7px;
-    }
-}
-
 .single-work {
     margin: 60px 0 90px;
 }
@@ -373,49 +293,6 @@ nav li:hover {
     text-align: center;
 }
 
-@media all and (max-width:1020px) {
-
-    .single-work {
-        margin-top: 56px;
-    }
-
-    .image {
-        width: 100%;
-        padding: 0;
-        margin-left: 0;
-    }
-
-    .description {
-        width: 100%;
-        padding: 0 2em;
-        margin: 45px 0 0 0;
-    }
-
-    .image img {
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        border-radius: 0px;
-    }
-}
-
-
-@media all and (min-width:1601px) {
-
-    .image {
-        width: 73%;
-    }
-
-    .description {
-        width: 20%;
-        padding: 0 2%;
-    }
-}
-
-.gallery .wrapper a {
-    border: none;
-    margin: 0;
-    padding: 0;
-}
 
 .home {
     position: absolute;
@@ -735,26 +612,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-font p {
     margin-top: 0;
-}
-
-.sidebar-font {
-    font: 126px 'Sofia', Arial, sans-serif;
-    margin: 0;
-    text-shadow: 4px 3px 0 rgb(102, 76, 62);
-}
-
-@media all and (min-width:801px) and (max-width:1050px) {
-    .sidebar-font {
-        font-size: 214px;
-        line-height: 238px;
-    }
-}
-
-@media all and (max-width:800px){
-    .sidebar-font {
-        font-size: 58px;
-        line-height: 61px;
-    }
 }
 
 .site-footer {

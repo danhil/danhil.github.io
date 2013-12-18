@@ -54,6 +54,18 @@ textarea {
     background-color: #0C0C0C;
 }
 
+.oval_parent{
+    background:rgb(25,25,25);
+    overflow:hidden;
+}
+
+.oval {
+background: white;
+-moz-border-radius: 100px / 100px;
+-webkit-border-radius: 100px / 100px;
+border-radius: 100px / 100px;
+}
+
 .site-header {
     position:relative;
     min-width: 280px;

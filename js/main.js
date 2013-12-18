@@ -26,21 +26,19 @@ $(document).ready(function(){
         var toggledDiv = '';
         $(this).click(function () {
 
-            $('.toggleDiv').slideUp(options.speed, options.easing);
+            //$('.toggleDiv').slideUp(options.speed, options.easing);
             var toggleClick = $(this);
             var toggleDiv = $(this).attr('rel');
 
-            if(String(toggleDiv) === String(toggledDiv)){
-                //$(inverted_header).slideToggle(options.speed, options.easing);
+            if(String(toggleDiv) === String(toggledDiv) && $(toggleDiv).is(":visible")){
+                $(inverted_header).fadeTo(options.speed, 1, options.easing);
+                $(toggleDiv).fadeOut(options.speed/6, options.easing);
             } else {
-                //$(inverted_header).slideUp(options.speed, options.easing);
-                //
-                $(toggledDiv).fadeOut(options.speed/6);
-                $(toggledDiv).slideUp(options.speedUp, options.easing);
+                $(inverted_header).fadeTo(options.speed, 0.1, options.easing);
+                $(toggledDiv).fadeOut(options.speedUp, options.easing);
+                $(toggleDiv).fadeIn(options.speed, options.easing);
                 toggledDiv = toggleDiv;
             }
-            $(toggleDiv).slideToggle(options.speed, options.easing);
-
             return false;
 
         });

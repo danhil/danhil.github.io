@@ -552,8 +552,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content-font {
-    font: 18px/18px 'OpenSansRegular', Arial, sans-serif;
-    margin: 0.5em 0;
+    font: 1em/1em 'OpenSansRegular', Arial, sans-serif;
+    margin: 0.5em auto;
     word-spacing: -1.4px;
     color: #A5A5A5;
 
